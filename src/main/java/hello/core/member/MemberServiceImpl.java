@@ -5,7 +5,7 @@ public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
 
     public MemberServiceImpl(MemberRepository memberRepository) {
-        this.memberRepository = new MemoryMemberRepository();
+        this.memberRepository = memberRepository;
     }
 
     @Override
@@ -17,4 +17,11 @@ public class MemberServiceImpl implements MemberService{
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+
+    //테스트용
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
+
 }
